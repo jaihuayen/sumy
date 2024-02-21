@@ -63,7 +63,7 @@ class PlaintextParser(DocumentParser):
         for line in self._text.splitlines():
             line = line.strip()
             if line.isupper():
-                heading = Sentence(line, self._tokenizer, is_heading=True)
+                heading = Sentence(line, self._tokenizer)
                 current_paragraph.append(heading)
             elif not line and current_paragraph:
                 sentences = self._to_sentences(current_paragraph)
